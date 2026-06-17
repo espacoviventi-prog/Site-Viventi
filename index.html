@@ -135,6 +135,7 @@
   .cta-primary { transition: transform .25s, box-shadow .25s, background .25s; }
   .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(154,69,51,.5); }
 </style>
+<script src="assets/mobile-edit.js"></script>
 </head>
 
 <body class="bg-sand text-ink">
@@ -186,7 +187,7 @@
 <!-- ░░ 2 · HERO ░░ -->
 <section class="relative overflow-hidden min-h-[88vh] flex items-start lg:items-center" style="background:#6E795E;">
   <!-- foto do casal: canto inferior direito, casal inteiro (zoom menor), bordas dissolvidas no verde -->
-  <img src="assets/img/casal-idosos-hero.jpg" alt="Casal de idosos sorrindo ao ar livre" class="absolute right-0 bottom-0 h-[56%] sm:h-[72%] lg:h-[88%] w-auto object-contain object-right-bottom select-none pointer-events-none" style="-webkit-mask:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 8%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 8%);mask-composite:intersect;" />
+  <img src="assets/img/casal-idosos-hero.jpg" alt="Casal de idosos sorrindo ao ar livre" class="absolute right-0 bottom-0 h-[56%] sm:h-[72%] lg:h-[88%] w-auto object-contain object-right-bottom select-none pointer-events-none hidden sm:block" style="-webkit-mask:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 8%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 8%);mask-composite:intersect;" />
   <!-- reforço sutil de contraste para o texto à esquerda -->
   <div class="absolute inset-0" style="background:linear-gradient(90deg,#6E795E 0%,#6E795E 17%,rgba(110,121,94,0.55) 33%,rgba(110,121,94,0) 52%);"></div>
   <!-- textura + monograma -->
@@ -261,12 +262,17 @@
 <!-- ░░ 4 · NOSSA ESTRUTURA (FACHADA) ░░ -->
 <section class="bg-sand">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-10 sm:py-12">
+    <!-- texto mobile: acima da imagem (só em telas pequenas) -->
+    <div class="sm:hidden mb-10 p-5 rounded-lg border-2" style="border-color:#B4543D;background:rgba(180,84,61,.04);">
+      <p class="kicker text-terra">Nosso espaço</p>
+      <h2 class="font-display font-normal text-ink mt-2 leading-[1.12] tracking-[-0.01em] text-[clamp(1.4rem,5vw,1.8rem)]">Estrutura própria, ampla e <span class="italic">acolhedora</span>.</h2>
+    </div>
     <div class="onscroll relative rounded-2xl overflow-hidden border border-sand3 shadow-[0_30px_70px_-32px_rgba(49,50,50,.45)]">
       <img src="assets/img/fachada.jpeg" alt="Fachada do Espaço Viventi" class="w-full block aspect-[3/2] object-cover object-[60%_50%]" />
       <!-- véu sutil só no canto superior esquerdo (sobre o céu) p/ legibilidade -->
       <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(120% 95% at 0% 0%, rgba(35,75,120,.42) 0%, rgba(35,75,120,.16) 34%, rgba(35,75,120,0) 56%);"></div>
-      <!-- frase sobre o céu -->
-      <div class="absolute top-0 left-0 p-7 sm:p-10 lg:p-14 max-w-[58%] sm:max-w-[52%] lg:max-w-[46%]">
+      <!-- frase sobre o céu (só desktop) -->
+      <div class="hidden sm:block absolute top-0 left-0 p-7 sm:p-10 lg:p-14 max-w-[58%] sm:max-w-[52%] lg:max-w-[46%]">
         <p class="kicker text-white/85" style="text-shadow:0 1px 10px rgba(20,50,85,.45);font-size:15px;">Nosso espaço</p>
         <h2 class="font-display font-normal text-white mt-3 sm:mt-4 leading-[1.12] tracking-[-0.01em] text-[clamp(1.25rem,3vw,2.5rem)]" style="text-shadow:0 2px 18px rgba(20,50,85,.5);">
           Estrutura própria, ampla e <span class="italic">acolhedora</span>.
@@ -314,23 +320,23 @@
 <section class="bg-sand">
   <div class="mx-auto max-w-container px-5 sm:px-8 pb-14 sm:pb-20">
     <p class="kicker text-terra onscroll" style="font-size:15px;">Os quatro pilares</p>
-    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 onscroll">
-      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8" style="border-bottom-color:#B4543D;">
+    <div class="mt-10 flex lg:grid lg:grid-cols-4 gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-5 px-5 lg:mx-0 lg:px-0 lg:overflow-visible onscroll">
+      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-bottom-color:#B4543D;">
         <span class="font-display leading-none text-[3.2rem] block" style="color:#B4543D;">01</span>
         <h3 class="font-display text-2xl mt-4">Corpo</h3>
         <p class="mt-3 text-[14.5px] text-ink/70 leading-relaxed">Força, equilíbrio e mobilidade com propósito clínico.</p>
       </article>
-      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8" style="border-bottom-color:#BA752C;">
+      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-bottom-color:#BA752C;">
         <span class="font-display leading-none text-[3.2rem] block" style="color:#BA752C;">02</span>
         <h3 class="font-display text-2xl mt-4">Cognição</h3>
         <p class="mt-3 text-[14.5px] text-ink/70 leading-relaxed">Estimulação baseada em evidências para memória, atenção e autonomia.</p>
       </article>
-      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8" style="border-bottom-color:#6E795E;">
+      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-bottom-color:#6E795E;">
         <span class="font-display leading-none text-[3.2rem] block" style="color:#6E795E;">03</span>
         <h3 class="font-display text-2xl mt-4">Participação Social</h3>
         <p class="mt-3 text-[14.5px] text-ink/70 leading-relaxed">Convívio, oficinas e vínculo que combatem o isolamento.</p>
       </article>
-      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8" style="border-bottom-color:#313232;">
+      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-bottom-color:#313232;">
         <span class="font-display leading-none text-[3.2rem] block" style="color:#313232;">04</span>
         <h3 class="font-display text-2xl mt-4">Cuidado Multidisciplinar</h3>
         <p class="mt-3 text-[14.5px] text-ink/70 leading-relaxed">Uma equipe integrada de gerontologia cuidando da pessoa inteira, de forma articulada.</p>
@@ -347,7 +353,7 @@
       <h2 class="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] mt-4 leading-tight">Cuidado completo em um só lugar.</h2>
     </div>
 
-    <div id="svcGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 onscroll"></div>
+    <div id="svcGrid" class="mt-12 flex lg:grid lg:grid-cols-3 gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-5 px-5 lg:mx-0 lg:px-0 lg:overflow-visible onscroll"></div>
   </div>
 </section>
 
@@ -388,8 +394,8 @@
 <section class="bg-sand">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <p class="kicker text-terra onscroll" style="font-size:15px;">Diferenciais</p>
-    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10 onscroll">
-      <div class="pt-6 border-t-2" style="border-top-color:#B4543D;">
+    <div class="mt-10 flex lg:grid lg:grid-cols-3 gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-5 px-5 lg:mx-0 lg:px-0 lg:overflow-visible onscroll">
+      <div class="pt-6 border-t-2 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-top-color:#B4543D;">
         <span class="inline-flex gap-[3px]" aria-hidden="true">
           <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
           <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
@@ -397,7 +403,7 @@
         </span>
         <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Único espaço de Ipatinga com terapeuta ocupacional especializada pela SBGG (Sociedade Brasileira de Geriatria e Gerontologia).</p>
       </div>
-      <div class="pt-6 border-t-2" style="border-top-color:#BA752C;">
+      <div class="pt-6 border-t-2 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-top-color:#BA752C;">
         <span class="inline-flex gap-[3px]" aria-hidden="true">
           <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
           <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
@@ -405,7 +411,7 @@
         </span>
         <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Tecnologia Sensorial Life, criada por neurocientistas, para estimulação sensorial avançada.</p>
       </div>
-      <div class="pt-6 border-t-2" style="border-top-color:#6E795E;">
+      <div class="pt-6 border-t-2 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-top-color:#6E795E;">
         <span class="inline-flex gap-[3px]" aria-hidden="true">
           <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
           <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
@@ -413,7 +419,7 @@
         </span>
         <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Avaliação funcional com equipamento MedEOR Medtech, com relatório individual de força e equilíbrio.</p>
       </div>
-      <div class="pt-6 border-t-2" style="border-top-color:#313232;">
+      <div class="pt-6 border-t-2 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-top-color:#313232;">
         <span class="inline-flex gap-[3px]" aria-hidden="true">
           <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
           <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
@@ -421,7 +427,7 @@
         </span>
         <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Estrutura própria, ampla e acessível, projetada para o conforto e a segurança de quem envelhece.</p>
       </div>
-      <div class="pt-6 border-t-2" style="border-top-color:#B4543D;">
+      <div class="pt-6 border-t-2 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-top-color:#B4543D;">
         <span class="inline-flex gap-[3px]" aria-hidden="true">
           <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
           <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
@@ -429,7 +435,7 @@
         </span>
         <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Ancorado na Década do Envelhecimento Saudável da OMS (2021–2030) e no Relatório Lancet 2025.</p>
       </div>
-      <div class="pt-6 border-t-2" style="border-top-color:#BA752C;">
+      <div class="pt-6 border-t-2 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0" style="border-top-color:#BA752C;">
         <span class="inline-flex gap-[3px]" aria-hidden="true">
           <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
           <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
@@ -492,23 +498,23 @@
       <h2 class="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] mt-4 leading-tight">Quatro passos, no seu ritmo.</h2>
     </div>
 
-    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 onscroll">
-      <div class="relative">
+    <div class="mt-14 flex lg:grid lg:grid-cols-4 gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-5 px-5 lg:mx-0 lg:px-0 lg:overflow-visible onscroll">
+      <div class="relative min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0 bg-white border border-sand3 rounded-xl p-7 lg:bg-transparent lg:border-0 lg:rounded-none lg:p-0">
         <span class="font-display text-terra text-6xl leading-none">1</span>
         <h3 class="font-display text-xl mt-4">Visita</h3>
         <p class="mt-2.5 text-[14px] text-ink/70 leading-relaxed">Conheça o espaço e entenda como funciona o cuidado Viventi.</p>
       </div>
-      <div class="relative">
+      <div class="relative min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0 bg-white border border-sand3 rounded-xl p-7 lg:bg-transparent lg:border-0 lg:rounded-none lg:p-0">
         <span class="font-display text-terra text-6xl leading-none">2</span>
         <h3 class="font-display text-xl mt-4">Avaliação</h3>
         <p class="mt-2.5 text-[14px] text-ink/70 leading-relaxed">Avaliamos corpo, cognição e rotina com tecnologia e protocolo clínico.</p>
       </div>
-      <div class="relative">
+      <div class="relative min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0 bg-white border border-sand3 rounded-xl p-7 lg:bg-transparent lg:border-0 lg:rounded-none lg:p-0">
         <span class="font-display text-terra text-6xl leading-none">3</span>
         <h3 class="font-display text-xl mt-4">Plano individualizado</h3>
         <p class="mt-2.5 text-[14px] text-ink/70 leading-relaxed">Cada pessoa recebe um programa feito para sua realidade.</p>
       </div>
-      <div class="relative">
+      <div class="relative min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0 bg-white border border-sand3 rounded-xl p-7 lg:bg-transparent lg:border-0 lg:rounded-none lg:p-0">
         <span class="font-display text-terra text-6xl leading-none">4</span>
         <h3 class="font-display text-xl mt-4">Acompanhamento contínuo</h3>
         <p class="mt-2.5 text-[14px] text-ink/70 leading-relaxed">A equipe acompanha a evolução e ajusta o cuidado ao longo do tempo.</p>
@@ -642,7 +648,7 @@ const FAQS = [
 // ── render services ─────────────────────────────────────────
 const svcGrid = document.getElementById('svcGrid');
 svcGrid.innerHTML = SERVICES.map(([t, d]) => `
-  <article class="svc bg-white border border-sand3 rounded-xl p-7 flex flex-col gap-3.5">
+  <article class="svc bg-white border border-sand3 rounded-xl p-7 flex flex-col gap-3.5 min-w-[94vw] sm:min-w-[45vw] lg:min-w-0 snap-start flex-shrink-0">
     <span class="inline-flex gap-[3px]" aria-hidden="true">
       <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
       <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
