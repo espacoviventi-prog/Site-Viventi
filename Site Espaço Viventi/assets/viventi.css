@@ -1,0 +1,30 @@
+/* ░░ Espaço Viventi — brand system ░░ */
+:root{
+  --vv-sage:#6E795E;   --vv-sage-deep:#5A6450;
+  --vv-ochre:#BA752C;  --vv-ochre-deep:#9E6020;
+  --vv-terra:#B4543D;  --vv-terra-deep:#9A4533;
+  --vv-cream:#F6E3D0;  --vv-cream-soft:#FBF4EC;
+  --vv-charcoal:#313232; --vv-ink:#3a3a38;
+}
+
+/* woven-dash brand texture (overlays any surface) */
+.vv-weave{ background-image:url(brand/weave.png); background-repeat:repeat; }
+
+/* recolorable V monogram — paint via background/color */
+.vv-symbol{
+  display:inline-block;
+  -webkit-mask:url(logo/symbol-mask.png) center/contain no-repeat;
+          mask:url(logo/symbol-mask.png) center/contain no-repeat;
+}
+
+/* big decorative monogram watermark uses a solid PNG (renders everywhere) */
+.vv-watermark{ position:absolute; pointer-events:none; user-select:none; }
+
+/* thin brand swoosh — the V-tail curl, drawn as an SVG stroke where used */
+.vv-rule{ height:2px; background:linear-gradient(90deg,var(--vv-ochre),var(--vv-terra)); border:0; }
+
+/* gentle entrance for brand marks */
+@media (prefers-reduced-motion:no-preference){
+  .vv-float{ animation:vv-float 9s ease-in-out infinite; }
+  @keyframes vv-float{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+}
