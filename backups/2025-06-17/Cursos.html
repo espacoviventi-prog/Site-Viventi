@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cursos · Espaço Viventi · Formação para quem cuida</title>
+<meta name="description" content="Curso de formação do Espaço Viventi: CUIDA. Capacitação em gerontologia para cuidadores que querem cuidar com método e afeto." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/viventi.css" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>document.documentElement.classList.add('js');</script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          terra: '#BA752C', terradk: '#9E6020',
+          terracota: '#B4543D', terracotadk: '#9A4533',
+          sand: '#FBF4EC', sand2: '#F6E3D0', sand3: '#ECD9C2',
+          sage: '#6E795E', sagedk: '#5A6450', ink: '#313232',
+        },
+        fontFamily: {
+          display: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
+          sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        maxWidth: { container: '1200px' },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Montserrat', sans-serif; color: #313232; background: #FBF4EC; -webkit-font-smoothing: antialiased; }
+  .font-display { font-family: 'Cormorant Garamond', serif; font-weight: 500; letter-spacing: -0.005em; }
+  ::selection { background: #6E795E; color: #F6E3D0; }
+  .kicker { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; }
+
+  .reveal, .onscroll { transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .js .reveal, .js .onscroll { opacity: 0; transform: translateY(24px); }
+  .js .reveal.in, .js .onscroll.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .reveal, .js .onscroll { opacity: 1; transform: none; transition: none; } }
+
+  .svc { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s cubic-bezier(.2,.7,.2,1), border-color .35s; }
+  .svc:hover { transform: translateY(-6px); box-shadow: 0 22px 50px -18px rgba(186,120,39,.45), 0 8px 20px -12px rgba(58,51,43,.18); border-color: #BA7827; }
+
+  .navlink { position: relative; }
+  .navlink::after { content: ''; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0; background: #BA752C; transition: width .3s; }
+  .navlink:hover::after { width: 100%; }
+  .navlink.active { color: #BA7827; }
+  .navlink.active::after { width: 100%; }
+
+  .cta-primary { transition: transform .25s, box-shadow .25s, background .25s; }
+  .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(186,120,39,.55); }
+</style>
+</head>
+
+<body class="bg-sand text-ink">
+
+<!-- ░░ NAVBAR ░░ -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 bg-sand/90 backdrop-blur-md transition-shadow duration-300">
+  <nav class="mx-auto max-w-container px-5 sm:px-8 h-[68px] flex items-center justify-between">
+    <a href="Site Espaço Viventi.html#top" class="flex items-center group" aria-label="Espaço Viventi — início">
+      <img src="assets/logo/logo-color.png" alt="Espaço Viventi" class="h-9 w-auto" />
+    </a>
+
+    <div class="hidden lg:flex items-center gap-6">
+      <a href="Site Espaço Viventi.html#servicos" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Serviços</a>
+      <a href="Site Espaço Viventi.html#centro-dia" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Centro Dia</a>
+      <a href="Nossa História.html" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Nossa história</a>
+      <a href="Rede Viventi.html" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Rede Viventi</a>
+      <a href="Cursos.html" class="navlink active text-[13px] font-medium text-ink/80 hover:text-ink">Cursos</a>
+      <a href="Galeria.html" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Galeria</a>
+      <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+marcar+uma+visita+ao+Viventi." target="_blank" rel="noopener"
+         class="cta-primary inline-flex items-center gap-2 bg-terra text-sand text-[12.5px] font-semibold tracking-wide rounded-full px-5 py-2.5">
+        Marcar uma visita
+      </a>
+    </div>
+
+    <button id="menuBtn" class="lg:hidden flex flex-col gap-[5px] p-2 -mr-2" aria-label="Menu">
+      <span class="block w-6 h-[2px] bg-ink transition"></span>
+      <span class="block w-6 h-[2px] bg-ink transition"></span>
+      <span class="block w-6 h-[2px] bg-ink transition"></span>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-sand3 bg-sand">
+    <div class="px-5 py-5 flex flex-col gap-4">
+      <a href="Site Espaço Viventi.html#servicos" class="menu-close text-[15px] font-medium text-ink/85">Serviços</a>
+      <a href="Site Espaço Viventi.html#centro-dia" class="menu-close text-[15px] font-medium text-ink/85">Centro Dia</a>
+      <a href="Nossa História.html" class="menu-close text-[15px] font-medium text-ink/85">Nossa história</a>
+      <a href="Rede Viventi.html" class="menu-close text-[15px] font-medium text-ink/85">Rede Viventi</a>
+      <a href="Cursos.html" class="menu-close text-[15px] font-medium text-terra">Cursos</a>
+      <a href="Galeria.html" class="menu-close text-[15px] font-medium text-ink/85">Galeria</a>
+      <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+marcar+uma+visita+ao+Viventi." target="_blank" rel="noopener"
+         class="menu-close inline-flex items-center justify-center gap-2 bg-terra text-sand text-[13px] font-semibold tracking-wide rounded-full px-5 py-3">
+        Marcar uma visita
+      </a>
+    </div>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ░░ INTRO BAND ░░ -->
+<section class="bg-sand2 pt-[68px] relative">
+  <div class="relative mx-auto max-w-container px-5 sm:px-8 py-12 sm:py-14">
+      <div class="max-w-xl onscroll">
+        <p class="kicker text-terra">Cursos</p>
+        <h1 class="font-display font-normal text-[clamp(2.1rem,5vw,3.6rem)] mt-5 leading-[1.08] tracking-[-0.01em]">
+          Formação para quem <span class="italic text-terra">cuida</span>.
+        </h1>
+        <p class="mt-7 text-[clamp(1rem,1.6vw,1.18rem)] text-ink/75 leading-relaxed">
+          Cuidar bem se aprende. Os cursos do Viventi nascem de mais de uma década de prática clínica em gerontologia,
+          para formar profissionais e cuidadores que olham para a pessoa inteira, com técnica e sensibilidade.
+        </p>
+      </div>
+      <div class="vv-mark-col hidden lg:flex absolute inset-y-0 right-5 sm:right-8 items-center pointer-events-none" aria-hidden="true">
+        <img src="assets/logo/symbol-terra.png" alt="" class="vv-intro-mark h-[320px] w-auto max-w-none opacity-[0.14]" data-v-default='{"size":640,"x":256,"y":150,"op":39}' style="height:640px;transform:translate(256px,150px);opacity:.39" />
+      </div>
+  </div>
+</section>
+
+<!-- ░░ CURSOS ░░ -->
+<section class="bg-sand">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <div class="max-w-4xl">
+
+      <!-- CUIDA -->
+      <article class="svc bg-white border border-sand3 rounded-2xl overflow-hidden grid md:grid-cols-2 onscroll">
+        <div class="md:order-2 aspect-[16/10] md:aspect-auto md:min-h-[360px] overflow-hidden">
+          <img src="https://placehold.co/800x600/BA752C/F6E3D0?text=CUIDA" alt="Curso CUIDA" class="w-full h-full object-cover" />
+        </div>
+        <div class="md:order-1 p-8 sm:p-10 flex flex-col">
+          <span class="kicker text-sage">Curso online · Cuidadores e família</span>
+          <h2 class="font-display text-[clamp(1.6rem,2.8vw,2.2rem)] leading-tight mt-3">CUIDA</h2>
+          <p class="text-[14px] text-ink/55 mt-1">Curso introdutório sobre a demência de Alzheimer</p>
+          <p class="mt-4 text-[14.5px] text-ink/70 leading-relaxed">
+            Entenda o que é a demência de Alzheimer e como oferecer um cuidado mais seguro, paciente e humanizado no dia a dia.
+            Um ponto de partida para cuidadores e familiares que querem cuidar com mais preparo e confiança.
+          </p>
+          <ul class="mt-6 flex flex-wrap gap-2">
+            <li class="text-[12px] font-medium text-ink/70 bg-sand2 rounded-full px-3 py-1.5">100% online</li>
+            <li class="text-[12px] font-medium text-ink/70 bg-sand2 rounded-full px-3 py-1.5">Acesso imediato</li>
+            <li class="text-[12px] font-medium text-ink/70 bg-sand2 rounded-full px-3 py-1.5">No seu ritmo</li>
+            <li class="text-[12px] font-medium text-ink/70 bg-sand2 rounded-full px-3 py-1.5">Certificado</li>
+          </ul>
+          <div class="mt-auto pt-8 flex flex-wrap items-center gap-4">
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/cuida-curso-introdutorio-sobre-a-demencia-de-alzheimer/I86408442N" target="_blank" rel="noopener"
+               class="cta-primary inline-flex items-center gap-2 bg-terra text-sand font-semibold tracking-wide rounded-full px-6 py-3 text-[13.5px]">
+              Quero me matricular
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+tirar+d%C3%BAvidas+sobre+o+curso+CUIDA." target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 text-ink/70 hover:text-ink font-medium text-[13.5px] transition">
+              Tirar dúvidas
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░ PARA QUEM É ░░ -->
+<section class="bg-sand2">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <div class="onscroll max-w-2xl">
+      <p class="kicker text-terra">Para quem é</p>
+      <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">Quem se forma com a gente.</h2>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-3 gap-6">
+      <article class="bg-white border border-sand3 rounded-xl p-7">
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <h3 class="font-display text-[20px] leading-tight mt-5">Cuidadores</h3>
+        <p class="text-[13.5px] text-ink/65 leading-relaxed mt-2">Quem cuida de um familiar ou atua profissionalmente como cuidador.</p>
+      </article>
+      <article class="bg-white border border-sand3 rounded-xl p-7">
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <h3 class="font-display text-[20px] leading-tight mt-5">Profissionais de saúde</h3>
+        <p class="text-[13.5px] text-ink/65 leading-relaxed mt-2">TOs, fisioterapeutas, enfermeiros, nutricionistas e demais áreas.</p>
+      </article>
+      <article class="bg-white border border-sand3 rounded-xl p-7">
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <h3 class="font-display text-[20px] leading-tight mt-5">Estudantes</h3>
+        <p class="text-[13.5px] text-ink/65 leading-relaxed mt-2">Quem quer se especializar no cuidado da longevidade desde cedo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ CTA FINAL ░░ -->
+<section style="background:#BA7827;">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20 text-center onscroll">
+    <h2 class="font-display text-sand text-[clamp(2rem,4.5vw,3.2rem)] leading-[1.1] max-w-3xl mx-auto">Comece hoje mesmo.</h2>
+    <p class="mt-5 text-sand/85 text-[clamp(1rem,1.6vw,1.15rem)] leading-relaxed max-w-md mx-auto">
+      O curso CUIDA está com inscrições abertas, 100% online e com acesso imediato. Matricule-se quando quiser.
+    </p>
+    <div class="mt-9 flex flex-col sm:flex-row justify-center items-center gap-4">
+      <a href="https://hotmart.com/pt-br/marketplace/produtos/cuida-curso-introdutorio-sobre-a-demencia-de-alzheimer/I86408442N" target="_blank" rel="noopener"
+         class="cta-primary inline-flex items-center gap-3 bg-sand text-terra font-semibold tracking-wide rounded-full px-8 py-4 text-[15px]">
+        Quero me matricular
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+tirar+d%C3%BAvidas+sobre+o+curso+CUIDA." target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2.5 text-sand/90 hover:text-sand font-medium text-[14.5px] transition">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Tirar dúvidas no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ RODAPÉ ░░ -->
+<footer style="background:#3A332B;">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-12">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+      <div class="flex items-center">
+        <img src="assets/logo/logo-cream.png" alt="Espaço Viventi" class="h-9 w-auto" />
+      </div>
+      <nav class="flex flex-wrap items-center gap-x-7 gap-y-2">
+        <a href="Site Espaço Viventi.html#servicos" class="text-[13px] text-sand/70 hover:text-sand transition">Serviços</a>
+        <a href="Site Espaço Viventi.html#centro-dia" class="text-[13px] text-sand/70 hover:text-sand transition">Centro Dia</a>
+        <a href="Nossa História.html" class="text-[13px] text-sand/70 hover:text-sand transition">Nossa história</a>
+        <a href="Rede Viventi.html" class="text-[13px] text-sand/70 hover:text-sand transition">Rede Viventi</a>
+        <a href="Cursos.html" class="text-[13px] text-sand/70 hover:text-sand transition">Cursos</a>
+        <a href="Galeria.html" class="text-[13px] text-sand/70 hover:text-sand transition">Galeria</a>
+      </nav>
+    </div>
+    <div class="mt-8 pt-6 border-t border-sand/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      <p class="text-[11.5px] text-sand/45">Rua Padre Anchieta, 62, Bom Retiro, Ipatinga · Vale do Aço · MG</p>
+      <p class="text-[11.5px] text-sand/45">© 2026 Espaço Viventi. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ░░ FLOATING WHATSAPP (mobile) ░░ -->
+<a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+marcar+uma+visita+ao+Viventi." target="_blank" rel="noopener"
+   class="lg:hidden fixed bottom-5 right-5 z-50 inline-flex items-center gap-2.5 bg-terra text-sand font-semibold text-[13.5px] rounded-full pl-4 pr-5 py-3.5 shadow-[0_10px_28px_rgba(58,51,43,.4)]">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  Marcar visita
+</a>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('shadow-[0_4px_24px_rgba(58,51,43,0.10)]', window.scrollY > 12);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  document.querySelectorAll('.menu-close').forEach((a) => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.onscroll').forEach((el) => io.observe(el));
+  setTimeout(() => document.querySelectorAll('.reveal, .onscroll').forEach((el) => el.classList.add('in')), 1400);
+</script>
+<script src="assets/v-adjust.js"></script>
+<script src="assets/te.js"></script>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Espaço Viventi · Longevidade e cuidado integral · Ipatinga, MG</title>
+<meta name="description" content="O mais completo cuidado para longevidade do Vale do Aço. Centro especializado em gerontologia: corpo, cognição e vida social em um único espaço. Ipatinga (MG)." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/viventi.css" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>document.documentElement.classList.add('js');</script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          terra: '#BA752C', terradk: '#9E6020',
+          terracota: '#B4543D', terracotadk: '#9A4533',
+          sand: '#FBF4EC', sand2: '#F6E3D0', sand3: '#ECD9C2',
+          sage: '#6E795E', sagedk: '#5A6450', ink: '#313232',
+        },
+        fontFamily: {
+          display: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
+          sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        maxWidth: { container: '1200px' },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Montserrat', sans-serif; color: #313232; background: #FBF4EC; -webkit-font-smoothing: antialiased; }
+  .font-display { font-family: 'Cormorant Garamond', serif; font-weight: 500; letter-spacing: -0.005em; }
+  ::selection { background: #6E795E; color: #F6E3D0; }
+
+  /* kicker label */
+  .kicker { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; }
+
+  /* reveal-on-enter — resting state is VISIBLE; hidden only while JS is active and not yet revealed */
+  .reveal, .onscroll { transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .js .reveal, .js .onscroll { opacity: 0; transform: translateY(24px); }
+  .js .reveal.in, .js .onscroll.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .reveal, .js .onscroll { opacity: 1; transform: none; transition: none; } }
+
+  /* service card hover — diffuse terracotta shadow + lift */
+  .svc { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s cubic-bezier(.2,.7,.2,1), border-color .35s; }
+  .svc:hover { transform: translateY(-6px); box-shadow: 0 22px 50px -18px rgba(180,84,61,.34), 0 8px 20px -12px rgba(49,50,50,.16); border-color: #BA752C; }
+
+  /* faq accordion */
+  .faq-panel { max-height: 0; overflow: hidden; transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .35s; opacity: 0; }
+  .faq-item.open .faq-panel { opacity: 1; }
+  .faq-item .faq-sign { transition: transform .35s; }
+  .faq-item.open .faq-sign { transform: rotate(45deg); }
+
+  /* testimonials carousel (mobile) */
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
+  .navlink { position: relative; }
+  .navlink::after { content: ''; position: absolute; left: 0; bottom: -4px; height: 2px; width: 0; background: #BA752C; transition: width .3s; }
+  .navlink:hover::after { width: 100%; }
+
+  .cta-primary { transition: transform .25s, box-shadow .25s, background .25s; }
+  .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(154,69,51,.5); }
+</style>
+</head>
+
+<body class="bg-sand text-ink">
+
+<!-- ░░ 1 · NAVBAR ░░ -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 bg-sand/90 backdrop-blur-md transition-shadow duration-300">
+  <nav class="mx-auto max-w-container px-5 sm:px-8 h-[68px] flex items-center justify-between">
+    <a href="#top" class="flex items-center group" aria-label="Espaço Viventi — início">
+      <img src="assets/logo/logo-color.png" alt="Espaço Viventi" class="h-9 w-auto" />
+    </a>
+
+    <div class="hidden lg:flex items-center gap-6">
+      <a href="#servicos" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Serviços</a>
+      <a href="#centro-dia" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Centro Dia</a>
+      <a href="Nossa História.html" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Nossa história</a>
+      <a href="Rede Viventi.html" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Rede Viventi</a>
+      <a href="Cursos.html" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Cursos</a>
+      <a href="Galeria.html" class="navlink text-[13px] font-medium text-ink/80 hover:text-ink">Galeria</a>
+      <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+marcar+uma+visita+ao+Viventi." target="_blank" rel="noopener"
+         class="cta-primary inline-flex items-center gap-2 bg-terra text-sand text-[12.5px] font-semibold tracking-wide rounded-full px-5 py-2.5">
+        Marcar uma visita
+      </a>
+    </div>
+
+    <button id="menuBtn" class="lg:hidden flex flex-col gap-[5px] p-2 -mr-2" aria-label="Menu">
+      <span class="block w-6 h-[2px] bg-ink transition"></span>
+      <span class="block w-6 h-[2px] bg-ink transition"></span>
+      <span class="block w-6 h-[2px] bg-ink transition"></span>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-sand3 bg-sand">
+    <div class="px-5 py-5 flex flex-col gap-4">
+      <a href="#servicos" class="menu-close text-[15px] font-medium text-ink/85">Serviços</a>
+      <a href="#centro-dia" class="menu-close text-[15px] font-medium text-ink/85">Centro Dia</a>
+      <a href="Nossa História.html" class="menu-close text-[15px] font-medium text-ink/85">Nossa história</a>
+      <a href="Rede Viventi.html" class="menu-close text-[15px] font-medium text-ink/85">Rede Viventi</a>
+      <a href="Cursos.html" class="menu-close text-[15px] font-medium text-ink/85">Cursos</a>
+      <a href="Galeria.html" class="menu-close text-[15px] font-medium text-ink/85">Galeria</a>
+      <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+marcar+uma+visita+ao+Viventi." target="_blank" rel="noopener"
+         class="menu-close inline-flex items-center justify-center gap-2 bg-terra text-sand text-[13px] font-semibold tracking-wide rounded-full px-5 py-3">
+        Marcar uma visita
+      </a>
+    </div>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ░░ 2 · HERO ░░ -->
+<section class="relative overflow-hidden min-h-[88vh] flex items-start lg:items-center" style="background:#6E795E;">
+  <!-- foto do casal: canto inferior direito, casal inteiro (zoom menor), bordas dissolvidas no verde -->
+  <img src="assets/img/casal-idosos-hero.jpg" alt="Casal de idosos sorrindo ao ar livre" class="absolute right-0 bottom-0 h-[56%] sm:h-[72%] lg:h-[88%] w-auto object-contain object-right-bottom select-none pointer-events-none" style="-webkit-mask:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 8%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 30%),linear-gradient(to top,transparent 0,#000 8%);mask-composite:intersect;" />
+  <!-- reforço sutil de contraste para o texto à esquerda -->
+  <div class="absolute inset-0" style="background:linear-gradient(90deg,#6E795E 0%,#6E795E 17%,rgba(110,121,94,0.55) 33%,rgba(110,121,94,0) 52%);"></div>
+  <!-- textura + monograma -->
+  <div class="absolute inset-0 vv-weave pointer-events-none" style="opacity:.06"></div>
+  <img src="assets/logo/symbol-cream.png" alt="" aria-hidden="true" class="vv-watermark vv-float left-[-9%] bottom-[-12%] w-[52%] max-w-[380px] opacity-[0.09] hidden sm:block" />
+  <!-- fio da marca na base -->
+  <div class="absolute inset-x-0 bottom-0 h-[5px] z-10" style="background:linear-gradient(90deg,#B4543D,#BA752C,#6E795E);"></div>
+
+  <!-- conteúdo -->
+  <div class="relative z-10 mx-auto max-w-container w-full px-6 sm:px-10 lg:px-8 pt-28 pb-14 lg:pb-20">
+    <div class="max-w-[600px]">
+      <img src="assets/logo/logo-cream-tag.png" alt="Espaço Viventi · Cuidado integral na longevidade" class="reveal h-12 sm:h-14 w-auto" />
+      <p class="kicker mt-8 reveal" style="color:#F2D8B6;">Longevidade · Ipatinga · Vale do Aço</p>
+      <h1 class="reveal font-display font-normal text-sand mt-5 leading-[1.12] tracking-[-0.01em] text-[clamp(1.95rem,3.4vw,3.05rem)]" style="text-shadow:0 1px 16px rgba(49,50,50,.18);">
+        O mais completo cuidado para <span class="italic" style="color:#F6E3D0">longevidade</span> do Vale do Aço.
+      </h1>
+      <p class="reveal mt-6 text-sand/90 text-[clamp(.98rem,1.3vw,1.12rem)] leading-relaxed max-w-md">
+        Corpo, cognição e vida social em um único espaço especializado em gerontologia, para quem quer envelhecer com independência e autonomia.
+      </p>
+      <div class="reveal mt-9 flex flex-wrap items-center gap-x-5 gap-y-4">
+        <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+marcar+uma+visita+ao+Viventi." target="_blank" rel="noopener"
+           class="cta-primary inline-flex items-center gap-3 bg-terra text-sand font-semibold tracking-wide rounded-full px-8 py-4 text-[15px]">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Marcar uma visita no WhatsApp
+        </a>
+        <a href="#servicos" class="inline-flex items-center gap-2 text-sand/90 hover:text-sand font-medium text-[14.5px] transition">
+          Conhecer o espaço
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 3 · A DOR ░░ -->
+<section class="bg-sand2">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <div class="onscroll relative max-w-4xl mx-auto rounded-[22px] bg-sand border border-sand3 shadow-[0_26px_64px_-34px_rgba(49,50,50,.42)] overflow-hidden">
+      <!-- fio da marca no topo -->
+      <div class="h-1.5" style="background:linear-gradient(90deg,#B4543D,#BA752C,#6E795E);"></div>
+      <!-- monograma d'água sutil -->
+      <img src="assets/logo/symbol-sage.png" alt="" aria-hidden="true" class="vv-watermark right-[-26px] bottom-[-30px] w-36 opacity-[0.06]" />
+      <div class="relative p-8 sm:p-12 lg:p-14">
+        <p class="font-display italic text-terra/65 text-6xl leading-none select-none">“</p>
+        <p class="font-display font-normal text-[clamp(1.35rem,2.7vw,2.05rem)] leading-[1.42] text-ink mt-1">
+          Você percebeu uma mudança. Um esquecimento que preocupa. Uma queda que assustou. O isolamento foi aumentando acompanhado de um desânimo. Você quer ajuda de quem vai saber cuidar e orientar. De uma equipe especializada em envelhecimento em um espaço criado para oferecer as melhores soluções.
+        </p>
+
+        <!-- as três dores — a palavra carrega a emoção, sem ícones -->
+        <div class="mt-10 pt-9 border-t border-sand3">
+          <p class="kicker text-sage">O que costuma pesar</p>
+          <div class="mt-6 grid sm:grid-cols-3">
+            <div class="py-5 sm:py-1 sm:px-7 first:sm:pl-0 border-t sm:border-t-0 sm:border-l border-sand3 first:border-t-0 first:sm:border-l-0">
+              <p class="font-display italic leading-none text-[clamp(1.6rem,2.5vw,2.15rem)]" style="color:#B4543D;">Sobrecarga</p>
+              <p class="mt-3 text-[13.5px] text-ink/60 leading-snug">que recai sobre quem cuida em casa, todos os dias.</p>
+            </div>
+            <div class="py-5 sm:py-1 sm:px-7 border-t sm:border-t-0 sm:border-l border-sand3">
+              <p class="font-display italic leading-none text-[clamp(1.6rem,2.5vw,2.15rem)]" style="color:#BA752C;">Isolamento</p>
+              <p class="mt-3 text-[13.5px] text-ink/60 leading-snug">e a rotina que vai se perdendo aos poucos.</p>
+            </div>
+            <div class="py-5 sm:py-1 sm:px-7 border-t sm:border-t-0 sm:border-l border-sand3">
+              <p class="font-display italic leading-none text-[clamp(1.6rem,2.5vw,2.15rem)]" style="color:#6E795E;">Medo</p>
+              <p class="mt-3 text-[13.5px] text-ink/60 leading-snug">de perder a autonomia e a independência.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 4 · NOSSA ESTRUTURA (FACHADA) ░░ -->
+<section class="bg-sand">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-10 sm:py-12">
+    <div class="onscroll relative rounded-2xl overflow-hidden border border-sand3 shadow-[0_30px_70px_-32px_rgba(49,50,50,.45)]">
+      <img src="assets/img/fachada.jpeg" alt="Fachada do Espaço Viventi" class="w-full block aspect-[3/2] object-cover object-[60%_50%]" />
+      <!-- véu sutil só no canto superior esquerdo (sobre o céu) p/ legibilidade -->
+      <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(120% 95% at 0% 0%, rgba(35,75,120,.42) 0%, rgba(35,75,120,.16) 34%, rgba(35,75,120,0) 56%);"></div>
+      <!-- frase sobre o céu -->
+      <div class="absolute top-0 left-0 p-7 sm:p-10 lg:p-14 max-w-[58%] sm:max-w-[52%] lg:max-w-[46%]">
+        <p class="kicker text-white/85" style="text-shadow:0 1px 10px rgba(20,50,85,.45);">Nosso espaço</p>
+        <h2 class="font-display font-normal text-white mt-3 sm:mt-4 leading-[1.12] tracking-[-0.01em] text-[clamp(1.25rem,3vw,2.5rem)]" style="text-shadow:0 2px 18px rgba(20,50,85,.5);">
+          Estrutura própria, ampla e <span class="italic">acolhedora</span>.
+        </h2>
+        <p class="hidden sm:block text-white/90 mt-4 leading-relaxed text-[clamp(.9rem,1.15vw,1.08rem)] max-w-sm" style="text-shadow:0 1px 12px rgba(20,50,85,.5);">
+          Um ambiente pensado em cada detalhe para acolher, cuidar e conviver, porque o lugar também faz parte do cuidado.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 5 · OS PILARES ░░ -->
+<section class="bg-sand">
+  <div class="mx-auto max-w-container px-5 sm:px-8 pb-14 sm:pb-20">
+    <p class="kicker text-terra onscroll">Os quatro pilares</p>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 onscroll">
+      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8" style="border-bottom-color:#B4543D;">
+        <span class="font-display leading-none text-[3.2rem] block" style="color:#B4543D;">01</span>
+        <h3 class="font-display text-2xl mt-4">Corpo</h3>
+        <p class="mt-3 text-[14.5px] text-ink/70 leading-relaxed">Força, equilíbrio e mobilidade com propósito clínico.</p>
+      </article>
+      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8" style="border-bottom-color:#BA752C;">
+        <span class="font-display leading-none text-[3.2rem] block" style="color:#BA752C;">02</span>
+        <h3 class="font-display text-2xl mt-4">Cognição</h3>
+        <p class="mt-3 text-[14.5px] text-ink/70 leading-relaxed">Estimulação baseada em evidências para memória, atenção e autonomia.</p>
+      </article>
+      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8" style="border-bottom-color:#6E795E;">
+        <span class="font-display leading-none text-[3.2rem] block" style="color:#6E795E;">03</span>
+        <h3 class="font-display text-2xl mt-4">Participação Social</h3>
+        <p class="mt-3 text-[14.5px] text-ink/70 leading-relaxed">Convívio, oficinas e vínculo que combatem o isolamento.</p>
+      </article>
+      <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8" style="border-bottom-color:#313232;">
+        <span class="font-display leading-none text-[3.2rem] block" style="color:#313232;">04</span>
+        <h3 class="font-display text-2xl mt-4">Cuidado Multidisciplinar</h3>
+        <p class="mt-3 text-[14.5px] text-ink/70 leading-relaxed">Uma equipe integrada de gerontologia cuidando da pessoa inteira, de forma articulada.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 6 · SERVIÇOS ░░ -->
+<section id="servicos" class="bg-sand2 scroll-mt-20">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <div class="onscroll max-w-2xl">
+      <p class="kicker text-terra">Serviços</p>
+      <h2 class="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] mt-4 leading-tight">Cuidado completo em um só lugar.</h2>
+    </div>
+
+    <div id="svcGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 onscroll"></div>
+  </div>
+</section>
+
+<!-- ░░ 7 · CENTRO DIA / VIVENTI INTEGRAL ░░ -->
+<section id="centro-dia" class="scroll-mt-20 relative overflow-hidden" style="background:linear-gradient(158deg,#6E795E 0%,#5A6450 100%);">
+  <img src="assets/logo/symbol-cream.png" alt="" aria-hidden="true" class="vv-watermark right-[-5%] top-1/2 -translate-y-1/2 w-[44vw] max-w-[420px] opacity-[0.10]" />
+  <div class="relative mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <div class="grid lg:grid-cols-[1.1fr_0.95fr] gap-12 lg:gap-16 items-center onscroll">
+      <div>
+        <p class="kicker" style="color:#F2D8B6;">Centro Dia</p>
+        <p class="font-display text-sand text-[clamp(1.4rem,2.6vw,2.1rem)] leading-none mt-2">Viventi <span class="italic">Integral</span></p>
+        <h2 class="font-display text-sand text-[clamp(2rem,4vw,3.1rem)] leading-[1.1] mt-5">Cuidado completo o dia inteiro.</h2>
+        <p class="mt-6 text-sand/70 text-[clamp(1rem,1.6vw,1.15rem)] leading-relaxed max-w-xl">
+          Para quem precisa de suporte contínuo e para a família que merece tranquilidade.
+        </p>
+        <dl class="mt-9 grid sm:grid-cols-2 gap-x-8 gap-y-4 max-w-xl">
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-terra shrink-0"></span><span class="text-[14.5px] text-sand/85">Segunda a sexta, 8h às 18h</span></div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-terra shrink-0"></span><span class="text-[14.5px] text-sand/85">Refeições incluídas</span></div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-terra shrink-0"></span><span class="text-[14.5px] text-sand/85">Rotina estruturada com equipe especializada</span></div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-terra shrink-0"></span><span class="text-[14.5px] text-sand/85">Atividades físicas, cognitivas e artísticas todos os dias</span></div>
+        </dl>
+        <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+saber+mais+sobre+o+Centro+Dia+Viventi." target="_blank" rel="noopener"
+           class="cta-primary inline-flex items-center gap-2.5 bg-terra text-sand font-semibold tracking-wide rounded-full px-5 py-3 text-[13px] mt-9">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Saber mais sobre o Centro Dia
+        </a>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_24px_60px_-24px_rgba(20,30,15,.6)] ring-1 ring-white/10">
+          <img src="assets/img/centro-dia.png" alt="Atividade em grupo no Centro Dia do Espaço Viventi" class="w-full h-full object-cover object-[55%_40%]" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 8 · DIFERENCIAIS ░░ -->
+<section class="bg-sand">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <p class="kicker text-terra onscroll">Diferenciais</p>
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10 onscroll">
+      <div class="pt-6 border-t-2" style="border-top-color:#B4543D;">
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Único espaço de Ipatinga com terapeuta ocupacional especializada pela SBGG (Sociedade Brasileira de Geriatria e Gerontologia).</p>
+      </div>
+      <div class="pt-6 border-t-2" style="border-top-color:#BA752C;">
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Tecnologia Sensorial Life, criada por neurocientistas, para estimulação sensorial avançada.</p>
+      </div>
+      <div class="pt-6 border-t-2" style="border-top-color:#6E795E;">
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Avaliação funcional com equipamento MedEOR Medtech, com relatório individual de força e equilíbrio.</p>
+      </div>
+      <div class="pt-6 border-t-2" style="border-top-color:#313232;">
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Estrutura própria, ampla e acessível, projetada para o conforto e a segurança de quem envelhece.</p>
+      </div>
+      <div class="pt-6 border-t-2" style="border-top-color:#B4543D;">
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Ancorado na Década do Envelhecimento Saudável da OMS (2021–2030) e no Relatório Lancet 2025.</p>
+      </div>
+      <div class="pt-6 border-t-2" style="border-top-color:#BA752C;">
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <p class="mt-5 text-[14px] text-ink/80 leading-relaxed">Orientação e apoio contínuos à família e aos cuidadores, para que o cuidado seja partilhado com segurança e tranquilidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 9 · DEPOIMENTOS ░░ -->
+<section class="bg-sand2">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <div class="onscroll flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+      <div>
+        <p class="kicker text-terra">Depoimentos</p>
+        <h2 class="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] mt-4 leading-tight">Quem já conhece o Viventi.</h2>
+      </div>
+      <div class="hidden lg:flex gap-2">
+        <button class="depo-prev grid place-items-center w-10 h-10 rounded-full border border-ink/15 text-ink/60 hover:border-terra hover:text-terra transition" aria-label="Anterior">‹</button>
+        <button class="depo-next grid place-items-center w-10 h-10 rounded-full border border-ink/15 text-ink/60 hover:border-terra hover:text-terra transition" aria-label="Próximo">›</button>
+      </div>
+    </div>
+
+    <div id="depoTrack" class="mt-12 flex lg:grid lg:grid-cols-3 gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-5 px-5 lg:mx-0 lg:px-0 lg:overflow-visible"></div>
+
+    <!-- video depoimento (vertical) -->
+    <div class="onscroll mt-8 grid lg:grid-cols-[340px_1fr] gap-8 lg:gap-12 items-center bg-white border border-sand3 rounded-2xl p-6 sm:p-8">
+      <div class="relative rounded-xl overflow-hidden bg-ink mx-auto w-full max-w-[320px] aspect-[9/16] group" id="depoVideoWrap">
+        <video id="depoVideo" class="w-full h-full object-cover" preload="metadata" playsinline controls
+               poster="" src="assets/video/depoimento-maria-iracema.mp4#t=3"></video>
+        <button id="depoPlay" class="absolute inset-0 grid place-items-center bg-ink/25 transition focus:outline-none" aria-label="Reproduzir depoimento">
+          <span class="grid place-items-center w-16 h-16 rounded-full bg-sand/15 backdrop-blur-sm border border-sand/50 group-hover:bg-terra group-hover:border-terra transition">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-sand ml-1"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </button>
+      </div>
+      <div>
+        <span class="inline-flex gap-[3px]" aria-hidden="true">
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+          <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+        </span>
+        <h3 class="font-display text-[clamp(1.5rem,2.6vw,2.1rem)] leading-tight mt-4">No olhar de quem vive o Viventi.</h3>
+        <p class="mt-4 text-[15px] text-ink/70 leading-relaxed max-w-md">
+          Maria Íris e Iracema contam sobre sua experiência no Espaço.
+        </p>
+        <p class="mt-5 text-[12.5px] tracking-wide uppercase font-semibold text-sage">Depoimento · Maria Íris e Iracema</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 10 · COMO COMEÇAR ░░ -->
+<section class="bg-sand">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <div class="onscroll max-w-2xl">
+      <p class="kicker text-terra">Como começar</p>
+      <h2 class="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] mt-4 leading-tight">Quatro passos, no seu ritmo.</h2>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 onscroll">
+      <div class="relative">
+        <span class="font-display text-terra text-6xl leading-none">1</span>
+        <h3 class="font-display text-xl mt-4">Visita</h3>
+        <p class="mt-2.5 text-[14px] text-ink/70 leading-relaxed">Conheça o espaço e entenda como funciona o cuidado Viventi.</p>
+      </div>
+      <div class="relative">
+        <span class="font-display text-terra text-6xl leading-none">2</span>
+        <h3 class="font-display text-xl mt-4">Avaliação</h3>
+        <p class="mt-2.5 text-[14px] text-ink/70 leading-relaxed">Avaliamos corpo, cognição e rotina com tecnologia e protocolo clínico.</p>
+      </div>
+      <div class="relative">
+        <span class="font-display text-terra text-6xl leading-none">3</span>
+        <h3 class="font-display text-xl mt-4">Plano individualizado</h3>
+        <p class="mt-2.5 text-[14px] text-ink/70 leading-relaxed">Cada pessoa recebe um programa feito para sua realidade.</p>
+      </div>
+      <div class="relative">
+        <span class="font-display text-terra text-6xl leading-none">4</span>
+        <h3 class="font-display text-xl mt-4">Acompanhamento contínuo</h3>
+        <p class="mt-2.5 text-[14px] text-ink/70 leading-relaxed">A equipe acompanha a evolução e ajusta o cuidado ao longo do tempo.</p>
+      </div>
+    </div>
+
+    <div class="mt-14 onscroll">
+      <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+marcar+uma+visita+ao+Viventi." target="_blank" rel="noopener"
+         class="cta-primary inline-flex items-center gap-3 bg-terra text-sand font-semibold tracking-wide rounded-full px-8 py-4 text-[15px]">
+        Começar pelo primeiro passo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 11 · EQUIPE / AUTORIDADE ░░ -->
+<section class="bg-sand2">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <div class="grid lg:grid-cols-[260px_1fr] gap-12 lg:gap-16 items-center onscroll">
+      <div class="flex flex-col items-center lg:items-start gap-5">
+        <div class="w-52 h-52 rounded-full overflow-hidden ring-4 ring-terra/20" style="background:#BA7827;">
+          <img src="https://placehold.co/400x400/BA7827/F4DDBF?text=Larissa" alt="Larissa Moreira" class="w-full h-full object-cover" />
+        </div>
+      </div>
+      <div>
+        <p class="kicker text-terra">Quem cuida de você</p>
+        <h2 class="font-display text-[clamp(1.8rem,3.2vw,2.5rem)] mt-4 leading-tight">Quem cuida de você.</h2>
+        <p class="mt-6 text-[15px] sm:text-[16px] text-ink/75 leading-relaxed max-w-2xl">
+          Larissa Moreira, Terapeuta Ocupacional (UFMG), especialista em Gerontologia pelo COFFITO e pela SBGG, com Residência Multiprofissional no HC-UFMG. Mais de 10 anos de atuação clínica, fundadora dos cursos CUIDA e CENA, docente universitária e palestrante.
+        </p>
+        <blockquote class="mt-8 pl-6 border-l-[3px] border-terra">
+          <p class="font-display italic text-terra text-[clamp(1.25rem,2.2vw,1.7rem)] leading-snug">
+            Antes de qualquer atividade, a gente avalia. Antes de qualquer diagnóstico, a gente enxerga a pessoa.
+          </p>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Equipe que atende no espaço -->
+    <div class="mt-16 sm:mt-20 onscroll">
+      <p class="kicker text-terra">Equipe que atende no espaço</p>
+      <div class="mt-7 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+
+        <article class="team-card bg-white border border-sand3 rounded-xl p-6 flex items-center gap-5">
+          <div class="shrink-0 w-20 h-20 rounded-full overflow-hidden ring-2 ring-terra/15" style="background:#BA7827;">
+            <img src="https://placehold.co/200x200/BA7827/F4DDBF?text=Nutri" alt="Nutricionista" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <h3 class="font-display text-[20px] leading-tight">Nome do profissional</h3>
+            <p class="mt-1.5 text-[13.5px] text-ink/65 leading-relaxed">Nutricionista · Nutrição do envelhecimento</p>
+          </div>
+        </article>
+
+        <article class="team-card bg-white border border-sand3 rounded-xl p-6 flex items-center gap-5">
+          <div class="shrink-0 w-20 h-20 rounded-full overflow-hidden ring-2 ring-terra/15" style="background:#BA7827;">
+            <img src="https://placehold.co/200x200/BA7827/F4DDBF?text=Geriatra" alt="Geriatra" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <h3 class="font-display text-[20px] leading-tight">Nome do profissional</h3>
+            <p class="mt-1.5 text-[13.5px] text-ink/65 leading-relaxed">Médico(a) geriatra · Consulta geriátrica</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 12 · FAQ ░░ -->
+<section class="bg-sand">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
+    <div class="grid lg:grid-cols-[0.7fr_1.5fr] gap-10 lg:gap-16 items-start">
+      <div class="onscroll">
+        <p class="kicker text-terra">Perguntas frequentes</p>
+        <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">Ainda com dúvidas?</h2>
+        <p class="mt-4 text-[14.5px] text-ink/65 leading-relaxed">A primeira visita é o melhor lugar para conversar, sem compromisso.</p>
+      </div>
+      <div id="faqList" class="onscroll divide-y divide-sand3 border-y border-sand3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 13 · CTA FINAL + LOCALIZAÇÃO ░░ -->
+<section style="background:#BA7827;">
+  <div class="grid lg:grid-cols-2 items-stretch">
+    <div class="px-6 sm:px-10 lg:px-16 py-14 sm:py-20 flex flex-col justify-center onscroll">
+      <h2 class="font-display text-sand text-[clamp(2rem,4.5vw,3.4rem)] leading-[1.08]">Comece com uma visita.</h2>
+      <p class="mt-5 text-sand/85 text-[clamp(1rem,1.6vw,1.15rem)] leading-relaxed max-w-md">
+        Conheça o espaço, a equipe e o cuidado presencialmente, no seu tempo.
+      </p>
+      <div class="mt-9 flex flex-col gap-5">
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Padre+Anchieta,+62,+Bom+Retiro,+Ipatinga+-+MG" target="_blank" rel="noopener"
+           class="group inline-flex items-start gap-3 text-sand/90 hover:text-sand transition">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-5 h-5 mt-0.5 shrink-0"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span class="text-[14.5px] leading-snug">Rua Padre Anchieta, 62, Bom Retiro<br/>Ipatinga · Vale do Aço · MG
+            <span class="block text-[12.5px] text-sand/70 group-hover:text-sand/90 transition mt-0.5">Ver rota no Google Maps →</span>
+          </span>
+        </a>
+        <a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+marcar+uma+visita+ao+Viventi." target="_blank" rel="noopener"
+           class="cta-primary inline-flex items-center gap-3 bg-sand text-terra font-semibold tracking-wide rounded-full px-8 py-4 text-[15px] self-start">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Marcar uma visita no WhatsApp
+        </a>
+      </div>
+      <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sand/90 text-[13.5px]">
+        <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Seg–Sex, 8h–18h</span>
+        <a href="https://instagram.com/espacoviventi_" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-sand transition"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> @espacoviventi_</a>
+      </div>
+    </div>
+    <div class="min-h-[340px] lg:min-h-full">
+      <iframe
+        title="Localização · Rua Padre Anchieta, 62, Bom Retiro, Ipatinga, MG"
+        src="https://www.google.com/maps?q=Rua+Padre+Anchieta,+62,+Bom+Retiro,+Ipatinga+-+MG&output=embed"
+        class="w-full h-full min-h-[340px] block grayscale-[15%]"
+        style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 14 · RODAPÉ ░░ -->
+<footer style="background:#3A332B;">
+  <div class="mx-auto max-w-container px-5 sm:px-8 py-12">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8">
+      <div class="flex items-center">
+        <img src="assets/logo/logo-cream.png" alt="Espaço Viventi" class="h-9 w-auto" />
+      </div>
+      <div class="flex flex-wrap items-center gap-x-7 gap-y-2">
+        <span class="text-[12px] text-sand/60">CNPJ 00.000.000/0001-00</span>
+        <a href="#" class="text-[12px] text-sand/60 hover:text-sand/90 transition">Aviso de Privacidade · LGPD</a>
+        <a href="https://instagram.com/espacoviventi_" target="_blank" rel="noopener" class="text-[12px] text-sand/60 hover:text-sand/90 transition">@espacoviventi_</a>
+        <a href="https://wa.me/553198001-4114" target="_blank" rel="noopener" class="text-[12px] text-sand/60 hover:text-sand/90 transition">wa.me/553198001-4114</a>
+      </div>
+    </div>
+    <nav class="mt-8 pt-6 border-t border-sand/10 flex flex-wrap items-center gap-x-7 gap-y-2">
+      <a href="#servicos" class="text-[13px] text-sand/70 hover:text-sand transition">Serviços</a>
+      <a href="#centro-dia" class="text-[13px] text-sand/70 hover:text-sand transition">Centro Dia</a>
+      <a href="Nossa História.html" class="text-[13px] text-sand/70 hover:text-sand transition">Nossa história</a>
+      <a href="Rede Viventi.html" class="text-[13px] text-sand/70 hover:text-sand transition">Rede Viventi</a>
+      <a href="Cursos.html" class="text-[13px] text-sand/70 hover:text-sand transition">Cursos</a>
+      <a href="Galeria.html" class="text-[13px] text-sand/70 hover:text-sand transition">Galeria</a>
+    </nav>
+    <div class="mt-6 pt-6 border-t border-sand/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      <p class="text-[11.5px] text-sand/45">Rua Padre Anchieta, 62, Bom Retiro, Ipatinga · Vale do Aço · MG</p>
+      <p class="text-[11.5px] text-sand/45">© 2026 Espaço Viventi. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ░░ FLOATING WHATSAPP (mobile) ░░ -->
+<a href="https://wa.me/553198001-4114?text=Ol%C3%A1!+Quero+marcar+uma+visita+ao+Viventi." target="_blank" rel="noopener"
+   class="lg:hidden fixed bottom-5 right-5 z-50 inline-flex items-center gap-2.5 bg-terra text-sand font-semibold text-[13.5px] rounded-full pl-4 pr-5 py-3.5 shadow-[0_10px_28px_rgba(58,51,43,.4)]">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  Marcar visita
+</a>
+
+<script>
+// ── data ────────────────────────────────────────────────────
+const SERVICES = [
+  ['Musculação Terapêutica', 'Treino de força com finalidade clínica e supervisão profissional.'],
+  ['Pilates Clínico', 'Controle, postura e mobilidade adaptados a cada corpo.'],
+  ['Fisioterapia', 'Recuperação e prevenção para movimento seguro e sem dor.'],
+  ['Terapia Ocupacional', 'Autonomia nas atividades do dia a dia, com sentido e propósito.'],
+  ['Estimulação Cognitiva / CST', 'Protocolo CST para memória, atenção e funções executivas.'],
+  ['Nutrição', 'Alimentação que sustenta força, cognição e bem-estar.'],
+  ['Geriatria', 'Olhar médico especializado no envelhecimento saudável.'],
+  ['Yoga', 'Flexibilidade, respiração e bem-estar emocional adaptados à longevidade.'],
+  ['Atividades Artísticas', 'Pintura, bordado e crochê para expressão criativa e vivência social.'],
+];
+
+const TESTIMONIALS = [
+  ['Quero agradecer imensamente pelo trabalho de vocês. O Espaço tem feito uma diferença enorme na vida da minha mãe e, de certa forma, até na rotina do meu pai. Ela, que sempre foi mais reservada, hoje comenta com alegria sobre os exercícios, as conversas e as pessoas que encontrou aí. É muito bonito ver como esse cuidado, esse ambiente acolhedor e esse empenho de vocês impactam a vida da nossa família.', 'Daniela', 'filha de cliente'],
+  ['Eu cheguei desanimado e com medo de cair. Hoje treino, converso e me sinto mais firme. Faz diferença ter uma equipe que olha pra pessoa inteira.', 'Antônio', '71 anos'],
+  ['A avaliação inicial nos mostrou exatamente onde focar. O plano é individual e a evolução do meu pai é acompanhada de perto. Recomendo de olhos fechados.', 'Sônia', 'filha de cliente'],
+];
+
+const FAQS = [
+  ['O Viventi é um asilo ou casa de repouso?', 'Não. Ninguém mora aqui. As pessoas vêm em dias e horários agendados, participam das atividades e voltam para casa, ou passam o dia no programa Viventi Integral.'],
+  ['Preciso de encaminhamento médico para começar?', 'Não é obrigatório, as nossas atividades não dependem de encaminhamento.'],
+  ['Como funciona a primeira visita?', 'Você conhece o Espaço, conversa com a equipe e entende como o cuidado é organizado. A visita é sem custo e sem compromisso!'],
+  ['Quais profissionais fazem parte da equipe?', 'Contamos com uma equipe multiprofissional com terapeuta ocupacional, médica, nutricionista e fisioterapeutas, trabalhando de forma realmente integrada.'],
+  ['Em quais casos o Centro Dia é indicado?', 'Para quem precisa de acompanhamento contínuo durante o dia, seja por questões de cognição, mobilidade ou segurança, com rotina estruturada, refeições incluídas e equipe especializada.'],
+];
+
+// ── render services ─────────────────────────────────────────
+const svcGrid = document.getElementById('svcGrid');
+svcGrid.innerHTML = SERVICES.map(([t, d]) => `
+  <article class="svc bg-white border border-sand3 rounded-xl p-7 flex flex-col gap-3.5">
+    <span class="inline-flex gap-[3px]" aria-hidden="true">
+      <i class="block w-4 h-[3px] rounded-sm" style="background:#B4543D;transform:skewX(-30deg);"></i>
+      <i class="block w-4 h-[3px] rounded-sm" style="background:#BA752C;transform:skewX(-30deg);"></i>
+      <i class="block w-4 h-[3px] rounded-sm" style="background:#6E795E;transform:skewX(-30deg);"></i>
+    </span>
+    <h3 class="font-display text-[21px] leading-tight mt-1">${t}</h3>
+    <p class="text-[13.5px] text-ink/65 leading-relaxed">${d}</p>
+  </article>`).join('');
+
+// ── render testimonials ─────────────────────────────────────
+const depoTrack = document.getElementById('depoTrack');
+depoTrack.innerHTML = TESTIMONIALS.map(([q, name, rel]) => `
+  <figure class="snap-center shrink-0 w-[85%] sm:w-[60%] lg:w-auto bg-white border border-sand3 rounded-2xl p-8 flex flex-col">
+    <span class="font-display italic text-terra text-5xl leading-[.4] select-none">“</span>
+    <blockquote class="mt-5 text-[15px] text-ink/80 italic leading-relaxed flex-1">${q}</blockquote>
+    <figcaption class="mt-6 text-[13px] font-semibold text-ink">${name}, <span class="font-normal text-ink/55">${rel}</span></figcaption>
+  </figure>`).join('');
+
+// carousel arrows (desktop) + swipe is native overflow on mobile
+const track = depoTrack;document.querySelector('.depo-next')?.addEventListener('click', () => track.scrollBy({ left: track.clientWidth * 0.7, behavior: 'smooth' }));
+document.querySelector('.depo-prev')?.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth * 0.7, behavior: 'smooth' }));
+
+// ── depoimento video play ───────────────────────────────────
+const depoVideo = document.getElementById('depoVideo');
+const depoPlay = document.getElementById('depoPlay');
+if (depoVideo && depoPlay) {
+  depoPlay.addEventListener('click', () => { depoVideo.play(); });
+  depoVideo.addEventListener('play', () => { depoPlay.style.display = 'none'; });
+  depoVideo.addEventListener('pause', () => { if (depoVideo.currentTime > 0 && !depoVideo.ended) return; depoPlay.style.display = 'grid'; });
+  depoVideo.addEventListener('ended', () => { depoPlay.style.display = 'grid'; depoVideo.currentTime = 3; });
+}
+
+// ── render faq ──────────────────────────────────────────────
+const faqList = document.getElementById('faqList');
+faqList.innerHTML = FAQS.map(([q, a], i) => `
+  <div class="faq-item ${i === 0 ? 'open' : ''}">
+    <button class="faq-head w-full flex items-center justify-between gap-6 text-left py-5 group">
+      <span class="font-display text-[clamp(1.05rem,1.8vw,1.3rem)] text-ink leading-snug group-hover:text-terra transition">${q}</span>
+      <span class="faq-sign shrink-0 grid place-items-center w-7 h-7 rounded-full border border-terra text-terra text-xl leading-none">+</span>
+    </button>
+    <div class="faq-panel"><p class="pb-6 pr-10 text-[14.5px] text-ink/70 leading-relaxed max-w-2xl">${a}</p></div>
+  </div>`).join('');
+
+function setPanel(item, open) {
+  const panel = item.querySelector('.faq-panel');
+  if (open) { item.classList.add('open'); panel.style.maxHeight = panel.scrollHeight + 'px'; }
+  else { item.classList.remove('open'); panel.style.maxHeight = '0px'; }
+}
+const faqItems = [...faqList.querySelectorAll('.faq-item')];
+faqItems.forEach((item) => {
+  item.querySelector('.faq-head').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    faqItems.forEach((o) => setPanel(o, false));
+    if (!isOpen) setPanel(item, true);
+  });
+});
+// open the first by default
+requestAnimationFrame(() => setPanel(faqItems[0], true));
+window.addEventListener('resize', () => { const o = faqList.querySelector('.faq-item.open'); if (o) { o.querySelector('.faq-panel').style.maxHeight = o.querySelector('.faq-panel').scrollHeight + 'px'; } });
+
+// ── navbar shadow on scroll ─────────────────────────────────
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('shadow-[0_4px_24px_rgba(58,51,43,0.10)]', window.scrollY > 12);
+onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+// ── mobile menu ─────────────────────────────────────────────
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+document.querySelectorAll('.menu-close').forEach((a) => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+// ── scroll reveal ───────────────────────────────────────────
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.onscroll').forEach((el) => io.observe(el));
+
+// hero reveals immediately on load, staggered
+const heroReveal = [...document.querySelectorAll('.reveal')];
+window.addEventListener('load', () => heroReveal.forEach((el, i) => setTimeout(() => el.classList.add('in'), 90 * i)));
+// safety net: guarantee everything is visible even if IO/rAF is throttled
+setTimeout(() => document.querySelectorAll('.reveal, .onscroll').forEach((el) => el.classList.add('in')), 1400);
+</script>
+<script src="assets/te.js"></script>
+</body>
+</html>
