@@ -97,28 +97,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/viventi.css" />
 
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/viventi-tw.css" />
 <script>document.documentElement.classList.add('js');</script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          terra: '#BA752C', terradk: '#9E6020',
-          terracota: '#B4543D', terracotadk: '#9A4533',
-          sand: '#FBF4EC', sand2: '#F6E3D0', sand3: '#ECD9C2',
-          sage: '#6E795E', sagedk: '#5A6450', ink: '#313232',
-        },
-        fontFamily: {
-          display: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
-          sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        },
-        maxWidth: { container: '1200px' },
-      },
-    },
-  };
-</script>
-
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Montserrat', sans-serif; color: #313232; background: #FBF4EC; -webkit-font-smoothing: antialiased; }
@@ -257,7 +237,7 @@
 
         <!-- as três dores — a palavra carrega a emoção, sem ícones -->
         <div class="mt-10 pt-9 border-t border-sand3">
-          <p class="kicker text-sage">O que costuma pesar</p>
+          <p class="kicker text-sage" style="font-size:12px;">O que costuma pesar</p>
           <div class="mt-6 grid sm:grid-cols-3">
             <div class="py-5 sm:py-1 sm:px-7 first:sm:pl-0 border-t sm:border-t-0 sm:border-l border-sand3 first:border-t-0 first:sm:border-l-0">
               <p class="font-display italic leading-none text-[clamp(1.6rem,2.5vw,2.15rem)]" style="color:#B4543D;">Sobrecarga</p>
@@ -287,7 +267,7 @@
       <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(120% 95% at 0% 0%, rgba(35,75,120,.42) 0%, rgba(35,75,120,.16) 34%, rgba(35,75,120,0) 56%);"></div>
       <!-- frase sobre o céu -->
       <div class="absolute top-0 left-0 p-7 sm:p-10 lg:p-14 max-w-[58%] sm:max-w-[52%] lg:max-w-[46%]">
-        <p class="kicker text-white/85" style="text-shadow:0 1px 10px rgba(20,50,85,.45);">Nosso espaço</p>
+        <p class="kicker text-white/85" style="text-shadow:0 1px 10px rgba(20,50,85,.45);font-size:15px;">Nosso espaço</p>
         <h2 class="font-display font-normal text-white mt-3 sm:mt-4 leading-[1.12] tracking-[-0.01em] text-[clamp(1.25rem,3vw,2.5rem)]" style="text-shadow:0 2px 18px rgba(20,50,85,.5);">
           Estrutura própria, ampla e <span class="italic">acolhedora</span>.
         </h2>
@@ -333,7 +313,7 @@
 <!-- ░░ 5 · OS PILARES ░░ -->
 <section class="bg-sand">
   <div class="mx-auto max-w-container px-5 sm:px-8 pb-14 sm:pb-20">
-    <p class="kicker text-terra onscroll">Os quatro pilares</p>
+    <p class="kicker text-terra onscroll" style="font-size:15px;">Os quatro pilares</p>
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 onscroll">
       <article class="bg-sand border border-sand3 border-b-[3px] rounded-xl p-8" style="border-bottom-color:#B4543D;">
         <span class="font-display leading-none text-[3.2rem] block" style="color:#B4543D;">01</span>
@@ -363,7 +343,7 @@
 <section id="servicos" class="bg-sand2 scroll-mt-20">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="onscroll max-w-2xl">
-      <p class="kicker text-terra">Serviços</p>
+      <p class="kicker text-terra" style="font-size:15px;">Serviços</p>
       <h2 class="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] mt-4 leading-tight">Cuidado completo em um só lugar.</h2>
     </div>
 
@@ -377,7 +357,7 @@
   <div class="relative mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="grid lg:grid-cols-[1.1fr_0.95fr] gap-12 lg:gap-16 items-center onscroll">
       <div>
-        <p class="kicker" style="color:#F2D8B6;">Centro Dia</p>
+        <p class="kicker" style="color:#F2D8B6;font-size:15px;">Centro Dia</p>
         <p class="font-display text-sand text-[clamp(1.4rem,2.6vw,2.1rem)] leading-none mt-2">Viventi <span class="italic">Integral</span></p>
         <h2 class="font-display text-sand text-[clamp(2rem,4vw,3.1rem)] leading-[1.1] mt-5">Cuidado completo o dia inteiro.</h2>
         <p class="mt-6 text-sand/70 text-[clamp(1rem,1.6vw,1.15rem)] leading-relaxed max-w-xl">
@@ -407,7 +387,7 @@
 <!-- ░░ 8 · DIFERENCIAIS ░░ -->
 <section class="bg-sand">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
-    <p class="kicker text-terra onscroll">Diferenciais</p>
+    <p class="kicker text-terra onscroll" style="font-size:15px;">Diferenciais</p>
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10 onscroll">
       <div class="pt-6 border-t-2" style="border-top-color:#B4543D;">
         <span class="inline-flex gap-[3px]" aria-hidden="true">
@@ -466,7 +446,7 @@
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="onscroll flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
       <div>
-        <p class="kicker text-terra">Depoimentos</p>
+        <p class="kicker text-terra" style="font-size:15px;">Depoimentos</p>
         <h2 class="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] mt-4 leading-tight">Quem já conhece o Viventi.</h2>
       </div>
       <div class="hidden lg:flex gap-2">
@@ -508,7 +488,7 @@
 <section class="bg-sand">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="onscroll max-w-2xl">
-      <p class="kicker text-terra">Como começar</p>
+      <p class="kicker text-terra" style="font-size:15px;">Como começar</p>
       <h2 class="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] mt-4 leading-tight">Quatro passos, no seu ritmo.</h2>
     </div>
 
@@ -647,8 +627,8 @@ const SERVICES = [
 
 const TESTIMONIALS = [
   ['Quero agradecer imensamente pelo trabalho de vocês. O Espaço tem feito uma diferença enorme na vida da minha mãe e, de certa forma, até na rotina do meu pai. Ela, que sempre foi mais reservada, hoje comenta com alegria sobre os exercícios, as conversas e as pessoas que encontrou aí. É muito bonito ver como esse cuidado, esse ambiente acolhedor e esse empenho de vocês impactam a vida da nossa família.', 'Daniela', 'filha de cliente'],
-  ['Eu cheguei desanimado e com medo de cair. Hoje treino, converso e me sinto mais firme. Faz diferença ter uma equipe que olha pra pessoa inteira.', 'Antônio', '71 anos'],
-  ['A avaliação inicial nos mostrou exatamente onde focar. O plano é individual e a evolução do meu pai é acompanhada de perto. Recomendo de olhos fechados.', 'Sônia', 'filha de cliente'],
+  ['É muito bom saber que minha mãe está no lugar certo, cercada por pessoas acolhedoras e dedicadas. O carinho, a atenção e a preocupação da equipe nos trazem muita tranquilidade e conforto. Temos a certeza de que ela está sendo muito bem cuidada. Sou imensamente grata por todo o cuidado e profissionalismo de vocês.', 'Izabella', 'filha de cliente'],
+  ['Depois que comecei a frequentar o Viventi, minha vida mudou completamente. Sinto-me mais alegre, mais feliz e com o corpo mais forte para enfrentar as batalhas da vida. O que mais gosto é o carinho da equipe: todos tratam a gente com muita atenção, simpatia e boa vontade. Saio daqui sempre com a alma leve. O Viventi faz bem para o corpo, para a mente e até para a alma.', 'Walkyria', '72 anos, cliente'],
 ];
 
 const FAQS = [

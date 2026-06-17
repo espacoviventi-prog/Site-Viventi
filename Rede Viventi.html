@@ -69,28 +69,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/viventi.css" />
 
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/viventi-tw.css" />
 <script>document.documentElement.classList.add('js');</script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          terra: '#BA752C', terradk: '#9E6020',
-          terracota: '#B4543D', terracotadk: '#9A4533',
-          sand: '#FBF4EC', sand2: '#F6E3D0', sand3: '#ECD9C2',
-          sage: '#6E795E', sagedk: '#5A6450', ink: '#313232',
-        },
-        fontFamily: {
-          display: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
-          sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        },
-        maxWidth: { container: '1200px' },
-      },
-    },
-  };
-</script>
-
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Montserrat', sans-serif; color: #313232; background: #FBF4EC; -webkit-font-smoothing: antialiased; }
@@ -167,7 +147,7 @@
 <section class="bg-sand2 pt-[68px] relative">
   <div class="relative mx-auto max-w-container px-5 sm:px-8 py-12 sm:py-14">
       <div class="max-w-xl onscroll">
-        <p class="kicker text-terra">Rede Viventi</p>
+        <p class="kicker text-terra" style="font-size:17px;">Rede Viventi</p>
         <h1 class="font-display font-normal text-[clamp(2.1rem,5vw,3.6rem)] mt-5 leading-[1.08] tracking-[-0.01em]">
           Cuidado integral na <span class="italic text-terra">longevidade</span>.
         </h1>
@@ -186,7 +166,7 @@
 <section class="bg-sand">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="onscroll max-w-2xl">
-      <p class="kicker text-sage">O que muda para você</p>
+      <p class="kicker text-sage" style="font-size:15px;">O que muda para você</p>
       <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">Especialistas que cuidam de você em conjunto.</h2>
     </div>
     <div class="mt-12 grid lg:grid-cols-3 gap-6">
@@ -226,7 +206,7 @@
 <section class="bg-sand2">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="onscroll max-w-2xl">
-      <p class="kicker text-terra">No que acreditamos</p>
+      <p class="kicker text-terra" style="font-size:13px;">No que acreditamos</p>
       <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">Os valores que orientam a rede.</h2>
       <p class="mt-4 text-[14.5px] text-ink/65 leading-relaxed">Existimos para que profissionais comprometidos com a qualidade possam crescer juntos, cuidar melhor e informar com responsabilidade.</p>
     </div>
@@ -253,7 +233,7 @@
       </article>
       <article class="bg-white border border-sand3 rounded-xl p-7">
         <span class="font-display text-terra text-[26px] leading-none">05</span>
-        <h3 class="font-display text-[20px] leading-tight mt-4">Respeito à autonomia</h3>
+        <h3 class="font-display text-[20px] leading-tight mt-4">Respeito à autonomia e independência</h3>
         <p class="text-[13.5px] text-ink/65 leading-relaxed mt-2">O objetivo do cuidado é preservar e ampliar a independência de quem é atendido.</p>
       </article>
     </div>
@@ -264,9 +244,9 @@
 <section class="bg-sand">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="onscroll max-w-2xl">
-      <p class="kicker text-terra">Por que confiar</p>
-      <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">Profissionais que realmente se importam.</h2>
-      <p class="mt-4 text-[14.5px] text-ink/65 leading-relaxed">Fazer parte da Rede Viventi não é automático. Cada profissional passa por uma seleção criteriosa conduzida pelo Espaço Viventi, para que você seja cuidado por quem tem critério técnico de verdade.</p>
+      <p class="kicker text-terra" style="font-size:13px;">Por que confiar</p>
+      <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">Profissionais selecionados.</h2>
+      <p class="mt-4 text-[14.5px] text-ink/65 leading-relaxed">Fazer parte da Rede Viventi não é automático. Cada profissional passa por uma seleção criteriosa conduzida pelo Espaço Viventi, para que você seja cuidado por quem tem critério técnico e humano de verdade.</p>
     </div>
     <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <article class="bg-white border border-sand3 rounded-xl p-7">
@@ -297,8 +277,8 @@
 <section class="bg-sand2">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="onscroll max-w-2xl">
-      <p class="kicker text-terra">Cuidado contínuo</p>
-      <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">Um acompanhamento que evolui com você.</h2>
+      <p class="kicker text-terra" style="font-size:13px;">Cuidado contínuo</p>
+      <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">Um acompanhamento que se adapta a você.</h2>
       <p class="mt-4 text-[14.5px] text-ink/65 leading-relaxed">Mais do que consultas isoladas, o cuidado contínuo acompanha as mudanças da sua saúde ao longo do tempo. Escolha o caminho que faz sentido para o seu momento.</p>
     </div>
     <div class="mt-12 grid md:grid-cols-3 gap-6 items-start">

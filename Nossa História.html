@@ -69,28 +69,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/viventi.css" />
 
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/viventi-tw.css" />
 <script>document.documentElement.classList.add('js');</script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          terra: '#BA752C', terradk: '#9E6020',
-          terracota: '#B4543D', terracotadk: '#9A4533',
-          sand: '#FBF4EC', sand2: '#F6E3D0', sand3: '#ECD9C2',
-          sage: '#6E795E', sagedk: '#5A6450', ink: '#313232',
-        },
-        fontFamily: {
-          display: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
-          sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        },
-        maxWidth: { container: '1200px' },
-      },
-    },
-  };
-</script>
-
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Montserrat', sans-serif; color: #313232; background: #FBF4EC; -webkit-font-smoothing: antialiased; }
@@ -177,7 +157,7 @@
         </p>
       </div>
       <div class="vv-mark-col hidden lg:flex absolute inset-y-0 right-5 sm:right-8 items-center pointer-events-none" aria-hidden="true">
-        <img src="assets/logo/symbol-ochre.png" alt="" class="vv-intro-mark h-[320px] w-auto max-w-none opacity-[0.14]" data-v-default='{"size":640,"x":267,"y":144,"op":46}' style="height:640px;transform:translate(267px,144px);opacity:.46" />
+        <img src="assets/logo/symbol-ochre.png" alt="" class="vv-intro-mark h-[320px] w-auto max-w-none opacity-[0.14]" data-v-default='{"size":640,"x":267,"y":182,"op":46}' style="height:640px;transform:translate(267px,182px);opacity:.46" />
       </div>
   </div>
 </section>
@@ -187,7 +167,7 @@
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <div class="onscroll order-2 lg:order-1">
-        <p class="kicker text-sage">A origem</p>
+        <p class="kicker text-sage" style="font-size:13px;">A origem</p>
         <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">De uma inquietação à prática.</h2>
         <!-- [PLACEHOLDER] Substitua pelo relato real da origem do Viventi -->
         <div class="mt-6 space-y-4 text-[15px] sm:text-[16px] text-ink/75 leading-relaxed">
@@ -213,7 +193,7 @@
   <img src="assets/logo/symbol-cream.png" alt="" aria-hidden="true" class="vv-watermark right-[-6%] top-1/2 -translate-y-1/2 w-[42vw] max-w-[400px] opacity-[0.10]" />
   <div class="relative mx-auto max-w-container px-5 sm:px-8 py-16 sm:py-24">
     <div class="max-w-3xl onscroll">
-      <p class="kicker" style="color:#F2D8B6;" data-eid="20">Missão</p>
+      <p class="kicker" style="color:#F2D8B6;font-size:17px;" data-eid="20">NOSSA Missão</p>
       <p class="font-display font-normal text-sand text-[clamp(1.55rem,3.2vw,2.5rem)] leading-[1.32] mt-6">
         Oferecer cuidado integral e humanizado para pessoas 50+ por meio de estímulos cognitivos, motores e de participação social, promovendo longevidade com mais <span class="italic">independência, vínculos e felicidade</span>.
       </p>
@@ -225,7 +205,7 @@
 <section class="bg-sand">
   <div class="mx-auto max-w-container px-5 sm:px-8 py-14 sm:py-20">
     <div class="onscroll max-w-2xl">
-      <p class="kicker text-sage">Valores</p>
+      <p class="kicker text-sage" style="font-size:17px;">NOSSOS Valores</p>
       <h2 class="font-display text-[clamp(1.7rem,3vw,2.3rem)] mt-4 leading-tight">Princípios que guiam cada atendimento.</h2>
     </div>
     <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -288,8 +268,8 @@
         </div>
       </div>
       <div>
-        <p class="kicker text-terra">Quem fundou</p>
-        <p class="font-display text-[clamp(1.4rem,2.5vw,1.9rem)] mt-3 leading-tight text-ink">Larissa Moreira</p>
+        <p class="kicker text-terra" style="font-size:15px;">Quem fundou</p>
+        <p class="font-display text-[clamp(1.4rem,2.5vw,1.9rem)] mt-3 leading-tight text-ink">Larissa Moreira da Costa</p>
         <p class="mt-6 text-[15px] sm:text-[16px] text-ink/75 leading-relaxed max-w-2xl">
           Terapeuta Ocupacional (UFMG), especialista em Gerontologia pelo COFFITO e pela SBGG, com Residência
           Multiprofissional no HC-UFMG. Mais de 10 anos de atuação clínica, fundadora dos cursos CUIDA e CENA,
