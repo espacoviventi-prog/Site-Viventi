@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<title>Preview Mobile — Espaço Viventi</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a1a; font-family: system-ui, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 24px 16px 40px; gap: 16px; }
+  .bar { width: 390px; max-width: 100%; background: #313232; border-radius: 12px 12px 0 0; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
+  .bar span { color: #F6E3D0; font-size: 13px; }
+  .sizes { display: flex; gap: 8px; }
+  .sizes button { background: #6E795E; border: none; color: white; padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+  .sizes button:hover { background: #BA752C; }
+  iframe { border: none; display: block; background: white; border-radius: 0 0 12px 12px; }
+  .pages { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; max-width: 500px; }
+  .pages a { background: #313232; color: #F6E3D0; text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 13px; }
+  .pages a:hover, .pages a.active { background: #BA752C; }
+  h1 { color: #F6E3D0; font-size: 14px; opacity: .5; }
+</style>
+</head>
+<body>
+<h1>Espaço Viventi — Preview Mobile</h1>
+<div class="pages">
+  <a href="#" class="active" data-src="index.html">Home</a>
+  <a href="#" data-src="Nossa História.html">Nossa História</a>
+  <a href="#" data-src="Rede Viventi.html">Rede Viventi</a>
+  <a href="#" data-src="Cursos.html">Cursos</a>
+  <a href="#" data-src="Galeria.html">Galeria</a>
+</div>
+<div class="bar">
+  <span id="lbl">📱 index.html — 390 px</span>
+  <div class="sizes">
+    <button data-w="375" data-h="667">SE</button>
+    <button data-w="390" data-h="844">14</button>
+    <button data-w="412" data-h="915">Galaxy</button>
+  </div>
+</div>
+<iframe id="frame" src="index.html" width="390" height="844"></iframe>
+<script>
+  var frame = document.getElementById('frame');
+  var lbl = document.getElementById('lbl');
+  var current = 'index.html';
+
+  document.querySelectorAll('.pages a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      document.querySelectorAll('.pages a').forEach(function(x){ x.classList.remove('active'); });
+      a.classList.add('active');
+      current = a.dataset.src;
+      frame.src = current;
+      lbl.textContent = '📱 ' + current + ' — ' + frame.width + ' px';
+    });
+  });
+
+  document.querySelectorAll('.sizes button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      frame.width = btn.dataset.w;
+      frame.height = btn.dataset.h;
+      lbl.textContent = '📱 ' + current + ' — ' + btn.dataset.w + ' px';
+    });
+  });
+</script>
+</body>
+</html>
