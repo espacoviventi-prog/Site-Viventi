@@ -28,3 +28,14 @@
   .vv-float{ animation:vv-float 9s ease-in-out infinite; }
   @keyframes vv-float{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
 }
+
+/* ═══ AJUSTES MOBILE ═══ legibilidade e área de toque para o público 50+ */
+@media (max-width:640px){
+  .kicker{ font-size:12px !important; letter-spacing:.14em !important; }
+  footer .text-\[11\.5px\]{ font-size:12.5px; }
+  .text-\[11px\]{ font-size:12px; }
+  .text-\[11\.5px\]{ font-size:12.5px; }
+  footer .text-\[12px\]{ font-size:12.5px; }
+  a[data-wa]:not(.cta-primary), a[data-cta]:not(.cta-primary){ padding-top:9px; padding-bottom:9px; }
+  section a:not([class*="rounded-full"]):not(.cta-primary):not(.navlink){ padding-top:8px; padding-bottom:8px; }
+}

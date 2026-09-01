@@ -6,8 +6,8 @@
   const mark = document.querySelector('.vv-intro-mark');
   if (!mark) return;
 
-  const KEY = 'vvVmark:' + location.pathname.split('/').pop();
-  const BASE = { size: 320, x: 0, y: 0, op: 14 };
+  const KEY = 'vvVmark2:' + location.pathname.split('/').pop();
+  const BASE = { size: 158, x: 0, y: 0, op: 14 };
   let DEF = Object.assign({}, BASE);
   try { if (mark.dataset.vDefault) DEF = Object.assign(DEF, JSON.parse(mark.dataset.vDefault)); } catch (e) {}
   let st = Object.assign({}, DEF);
