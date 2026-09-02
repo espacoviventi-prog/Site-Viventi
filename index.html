@@ -145,6 +145,14 @@
     mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 100%); }
   @media (min-width: 640px) { .hero-doc { height: 84%; } }
   @media (min-width: 1024px) { .hero-doc { height: 103%; width: min(52%, 620px); object-fit: cover; object-position: 60% top; } }
+  /* mobile e tablet: foto vira bloco abaixo do texto, sem sobreposição */
+  @media (max-width: 1023px) {
+    .hero { flex-direction: column; }
+    .hero-veil { display: none; }
+    .hero-content { padding-bottom: 0 !important; }
+    .hero-doc { position: static; order: 2; height: auto; width: min(68%, 300px); margin: 2.25rem auto 0; display: block;
+      border-radius: 22px 22px 0 0; -webkit-mask-image: none !important; mask-image: none !important; }
+  }
   .hero-doc {
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 100%),
                         linear-gradient(0deg, transparent 0%, #000 8%, #000 100%);
@@ -211,19 +219,19 @@
 <span id="top"></span>
 
 <!-- ░░ 1 · HERO ░░ -->
-<section class="relative overflow-hidden pt-[68px] flex items-stretch" style="background:#6E795E;">
+<section class="hero relative overflow-hidden pt-[68px] flex items-stretch" style="background:#6E795E;">
   <!-- faixa clara atrás da foto: continua o fundo branco da imagem até o topo -->
   <div class="hero-doc-bg hidden lg:block absolute right-0 top-0 bottom-0 pointer-events-none" aria-hidden="true"></div>
   <!-- foto da médica: canto inferior direito, bordas dissolvidas no verde -->
   <img src="../assets/img/dra-izabela-hero.jpg" fetchpriority="high" alt="Dra. Izabela Melo, médica do Espaço Viventi em Ipatinga"
        class="hero-doc absolute right-0 bottom-0 w-auto object-right-bottom select-none pointer-events-none" />
   <!-- véu de contraste p/ o texto à esquerda -->
-  <div class="absolute inset-0" style="background:linear-gradient(90deg,#6E795E 0%,#6E795E 40%,rgba(110,121,94,0.82) 54%,rgba(110,121,94,0.22) 70%,rgba(110,121,94,0) 84%);"></div>
+  <div class="hero-veil absolute inset-0" style="background:linear-gradient(90deg,#6E795E 0%,#6E795E 40%,rgba(110,121,94,0.82) 54%,rgba(110,121,94,0.22) 70%,rgba(110,121,94,0) 84%);"></div>
   <!-- monograma d'água -->
   <img src="../assets/logo/symbol-cream-trim.png" alt="" aria-hidden="true" class="absolute hidden sm:block pointer-events-none" style="left:-8%;bottom:calc(-12% + 171px);width:min(23%,179px);opacity:.08;" />
   <!-- fio da marca na base -->
   <div class="absolute inset-x-0 bottom-0 h-[5px] z-10" style="background:linear-gradient(90deg,#B4543D,#BA752C,#6E795E);"></div>
-  <div class="relative mx-auto max-w-container w-full px-5 sm:px-8 py-16 sm:py-24 lg:py-28" style="padding-top:4.5rem;">
+  <div class="hero-content relative mx-auto max-w-container w-full px-5 sm:px-8 py-16 sm:py-24 lg:py-28" style="padding-top:4.5rem;">
     <div class="onscroll max-w-2xl">
       <p class="kicker text-cream/85">Geriatria · Saúde do idoso · Ipatinga/MG</p>
       <h1 class="font-display font-normal text-sand text-[clamp(2.1rem,4.6vw,3.5rem)] mt-5 leading-[1.06] tracking-[-0.01em]" style="text-shadow:0 1px 18px rgba(49,50,50,.35);max-width:min(24ch,620px);">
@@ -276,7 +284,7 @@
       <div class="onscroll mt-8 flex flex-col gap-5 text-ink/80" style="max-width:64ch;text-wrap:pretty;font-size:clamp(1.02rem,1.45vw,1.12rem);line-height:1.72;">
         <p class="text-ink/85">Acredito que envelhecer bem é viver com independência, funcionalidade e propósito. Minha atuação é voltada ao cuidado integral do adulto e da pessoa idosa, com foco em prevenção, longevidade saudável, qualidade de vida e preservação da autonomia.</p>
         <p>Sou médica com residência em Clínica Médica pelo Hospital Márcio Cunha e fellowship em Geriatria pela Universidade Federal de Minas Gerais (UFMG).</p>
-        <p>Atuo na prevenção, diagnóstico e tratamento de condições frequentes do envelhecimento, como alterações de memória, quedas, fragilidade, distúrbios do sono, doenças crônicas, polifarmácia e perda de autonomia.</p>
+        <p>Atuo na prevenção, diagnóstico e tratamento de condições frequentes do envelhecimento, como fragilidade, alterações de memória, quedas, distúrbios do sono, doenças crônicas, polifarmácia e perda de autonomia.</p>
         <p>No Espaço Viventi, ofereço um acompanhamento individualizado, baseado em evidências científicas, escuta atenta e cuidado humanizado, ajudando pacientes e famílias a construírem estratégias para envelhecer com mais saúde, segurança e bem-estar.</p>
         <p>Se você ou alguém da sua família busca um olhar mais amplo para o envelhecimento, será um prazer acolher essa história e conversar sobre os próximos passos.</p>
       </div>
